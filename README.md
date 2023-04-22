@@ -35,8 +35,12 @@ powRequest = {
 ```
 Your POW group key becomes
 ```
-gPowkey : hash('sha256',powReqests[0:n]);
+gPowKey = {
+  gpowGroup = nodeAdrList[n]
+  gPowkeyID : hash('sha256',gpowGroup);
+}  
 ```
-Anyone on the network can now request to see the transaction by broadcasting a request to the network to
-nodes to send a copy of the record using its txID. The network will respond with n copies of the record each with 
-the same gPowkey.
+Anyone on the network can now request to see the transaction by broadcasting a request to the network asking for
+nodes to send a copy of the record using its txID. The n nodes in the network will respond back each with a copy of the record and the gPowKey.  Any 
+responses from nodes not it the gPowGroup should be discarded as false.
+
