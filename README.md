@@ -1,16 +1,16 @@
 # peerPay
 A distributed ledger that uses the peerTree network
 
-##Problem:
+## Problem:
 How can you avoid storing every record of a transaction on the every node?
 
-##Proposed Solution:
+## Proposed Solution:
 Store n copies of the record on a randomly selected subset of the network.
 
-##Considerations:
+## Considerations:
 You have x nodes on a P2P network and you want to randomly select n of those nodes to validate and store the transaction.  Unfortunately nobody trusts anybody including yourself,  so no single node can select the list for you.  Some how the selection of the n nodes must be done by the whole group.
 
-##Methodology:
+## Methodology:
 Broadcast to the group a request for a response from the first n nodes to complete a POW problem.  The first n nodes to complete the task are your random group of size n.  To prove that solution is correct each node will show their work like so.
 ```
 WorkDone = {
