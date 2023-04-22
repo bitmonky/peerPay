@@ -3,7 +3,7 @@ A distributed ledger that uses the peerTree network
 
 ## Problem:
 How can you avoid storing every record of a transaction on the every node but still be sure that no peers in the group can colude by working together to
-produce false transaction?
+produce false transactions?
 
 ## Proposed Solution:
 Store n copies of the record on a randomly selected subset of the network.
